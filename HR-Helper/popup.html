@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>招聘助手设置</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="settings-shell">
+      <header class="hero">
+        <div class="hero-icon" aria-hidden="true">🔍</div>
+        <div>
+          <h1>招聘助手设置</h1>
+          <p>配置公司信息和 AI 接口</p>
+        </div>
+      </header>
+
+      <form id="settingsForm" class="settings-form">
+        <section class="settings-card">
+          <div class="card-heading">
+            <span class="card-icon" aria-hidden="true">🏢</span>
+            <h2>公司信息</h2>
+          </div>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">🏢</span>公司名称</span>
+            <input id="companyName" name="companyName" type="text" placeholder="例如：某某科技有限公司">
+          </label>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">🔧</span>公司所在行业</span>
+            <input id="industry" name="industry" type="text" placeholder="例如：航空制造 / 智能制造">
+          </label>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">📍</span>目标招聘地区</span>
+            <input id="targetRegion" name="targetRegion" type="text" placeholder="例如：深圳 / 长三角 / 全国">
+          </label>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">🌐</span>关键词语言</span>
+            <select id="keywordLanguage" name="keywordLanguage">
+              <option value="中文">中文</option>
+              <option value="英文">英文</option>
+              <option value="双语">双语</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="settings-card">
+          <div class="card-heading">
+            <span class="card-icon" aria-hidden="true">🤖</span>
+            <h2>AI 配置</h2>
+          </div>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">🔑</span>API Key</span>
+            <span class="secret-field">
+              <input id="apiKey" name="apiKey" type="password" placeholder="请输入 API Key">
+              <button id="toggleApiKey" class="ghost-button" type="button" aria-label="显示 API Key">👁 显示</button>
+            </span>
+          </label>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">🔗</span>API Base URL</span>
+            <input id="apiBaseUrl" name="apiBaseUrl" type="url" placeholder="例如：https://api.openai.com">
+          </label>
+
+          <label class="field">
+            <span class="field-label"><span aria-hidden="true">🤖</span>模型名称</span>
+            <input id="modelName" name="modelName" type="text" placeholder="例如：gpt-4o-mini">
+          </label>
+        </section>
+
+        <button class="save-button" type="submit">保存设置</button>
+        <div id="statusMessage" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
